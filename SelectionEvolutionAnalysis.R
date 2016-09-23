@@ -22,7 +22,7 @@ priorgBiv1<-list(G=list(G1=list(V=diag(2), nu=2, alpha.mu=rep(0,2), alpha.V=diag
                         G2=list(V=diag(2), nu=2, alpha.mu=rep(0,2), alpha.V=diag(2)*1000),
                         G3=list(V=diag(2), nu=2, alpha.mu=rep(0,2), alpha.V=diag(2)*1000),
                         G4=list(V=diag(2), nu=2, alpha.mu=rep(0,2), alpha.V=diag(2)*1000)),
-                 R=list(V=diag(c(1,0.00001),nrow = 2), nu=2))
+                 R=list(V=diag(2), nu=2))
 
 mgBivLRS2<-MCMCglmm(cbind(Weight,rLRS2) ~ trait-1 + trait:(f)+at.level(trait,1):(Sex*Age*StDate+StDateSq),
                     random =~ us(trait):animal + us(trait):id + us(trait):Mother + idh(trait):Year, 
